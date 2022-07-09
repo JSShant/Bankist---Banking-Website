@@ -6,6 +6,7 @@
   --color-primary-darker: #4bbb7d;
   --color-secondary-darker: #ffbb00;
   --color-tertiary-darker: #fd424b;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
 }
 
 * {
@@ -48,4 +49,129 @@ body {
   font-size: 4rem;
   line-height: 1.3;
   font-weight: 500;
+}
+
+/* Landing Page */
+.landing {
+  min-height: 100vh;
+}
+
+/* Navbar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+  width: 100%;
+  padding: 0 6rem;
+  margin: 0 auto;
+}
+
+.nav__logo {
+  height: 4.5rem;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav__item {
+  margin-left: 4rem;
+}
+
+.nav__link:link,
+.nav__link:visited {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.nav__link--btn:link,
+.nav__link--btn:visited {
+  background-color: var(--color-primary);
+  padding: 0.8rem 2.6rem;
+  border-radius: 3rem;
+  color: #222;
+}
+
+.nav__link--btn:hover,
+.nav__link--btn:active {
+  background-color: var(--color-primary-darker);
+  color: #333;
+}
+
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-image: var(--gradient-primary);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  width: 100%;
+  max-width: 128rem;
+  padding: 0 4rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header__content {
+  width: 60%;
+}
+
+.header__title {
+  font-size: 5.5rem;
+  line-height: 1.35;
+  margin-bottom: 2rem;
+}
+
+.header__subtitle {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.header__btn {
+  margin-top: 6rem;
+  display: inline-block;
+  background: none;
+  font-size: 1.7rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--color-primary);
+  border: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+.header__img--wrapper {
+  width: 40%;
+}
+
+.header__img {
+  width: 100%;
 }
