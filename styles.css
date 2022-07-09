@@ -33,6 +33,7 @@ body {
 /* GENERAL STYLING - reuseable classes*/
 .section {
   padding: 15rem 3rem;
+  border-top: 1px solid #ddd;
 }
 
 .section__title {
@@ -460,4 +461,57 @@ body {
 
 .testimonial__location {
   font-size: 1.5rem;
+}
+
+
+
+/* SIGN UP FORM */
+.section__sign-up {
+  background-color: #37383d;
+  text-align: center;
+  padding: 10rem 3rem;
+}
+
+.section__sign-up .section__header {
+  color: #fff;
+  text-align: center;
+}
+
+.section__sign-up .section__title {
+  margin-bottom: 6rem;
+}
+
+.section__sign-up .btn {
+  font-size: 1.9rem;
+  padding: 2rem 5rem;
+}
+
+/* FOOTER */
+.footer {
+  padding: 10rem 3rem;
+  background-color: #37383d;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.footer__item {
+  margin-right: 4rem;
+}
+
+.footer__link {
+  font-size: 1.6rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer__logo {
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 5rem;
 }
