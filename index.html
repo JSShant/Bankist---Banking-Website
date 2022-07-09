@@ -27,7 +27,9 @@
             <a href="#testimonials" class="nav__link">Testimonials</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link nav__link--btn">Open Account</a>
+            <a href="#" class="nav__link nav__link--btn btn__show--modal"
+              >Open Account</a
+            >
           </li>
         </ul>
       </nav>
@@ -316,5 +318,25 @@
       </ul>
       <img src="img/icon.png" alt="Logo" class="footer__logo" />
     </footer>
+
+    <div class="modal hidden">
+      <button class="btn__close--modal">&times;</button>
+      <h2 class="modal__header">
+        Open your bank account <br />
+        in just <span class="highlight">5 minutes</span>
+      </h2>
+      <form class="modal__form">
+        <label>First Name</label>
+        <input type="text" />
+        <label>Last Name</label>
+        <input type="text" />
+        <label>Email Address</label>
+        <input type="email" />
+        <button class="btn btn__show--modal">Next step &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
