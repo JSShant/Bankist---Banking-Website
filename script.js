@@ -6,6 +6,9 @@ const btnCloseModal = document.querySelector(".btn__close--modal");
 const btnsOpenModal = document.querySelectorAll(".btn__show--modal");
 const scrollBtn = document.querySelector(".btn--scroll");
 const features = document.querySelector("#features");
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab--container");
+const tabsContent = document.querySelectorAll(".operations__content");
 
 //Functions
 const openModal = function (e) {
@@ -48,4 +51,19 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     const id = e.target.getAttribute("href");
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
+});
+
+//Tab Functionality
+tabsContainer.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".operations__tab");
+  //Guard Clause
+  if (!clicked) return;
+  //Removing Active Classes
+  tabs.forEach((t) => t.classList.remove("operations__tab--active"));
+  tabsContent.forEach((c) => c.classList.remove("operations__content--active"));
+  //Adding Active Classes
+  clicked.classList.add("operations__tab--active");
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add("operations__content--active");
 });
