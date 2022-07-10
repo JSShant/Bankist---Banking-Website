@@ -1,5 +1,5 @@
 "use strict";
-
+//Global Variables
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn__close--modal");
@@ -7,7 +7,7 @@ const btnsOpenModal = document.querySelectorAll(".btn__show--modal");
 const scrollBtn = document.querySelector(".btn--scroll");
 const features = document.querySelector("#features");
 
-//Modal Window
+//Functions
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -18,6 +18,7 @@ const closeModal = function () {
   overlay.classList.add("hidden");
 };
 
+//Modal Window
 btnsOpenModal.forEach(function (btn) {
   btn.addEventListener("click", openModal);
 });
@@ -39,4 +40,12 @@ scrollBtn.addEventListener("click", function (e) {
     top: s1coords.top + window.pageYOffset,
     behavior: "smooth",
   });
+});
+
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 });
