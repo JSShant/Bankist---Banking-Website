@@ -11,6 +11,7 @@ const tabsContainer = document.querySelector(".operations__tab--container");
 const tabsContent = document.querySelectorAll(".operations__content");
 const nav = document.querySelector(".nav");
 const landing = document.querySelector(".landing");
+const allSections = document.querySelectorAll(".section");
 
 //Functions
 const openModal = function (e) {
@@ -39,6 +40,13 @@ const stickyNav = function (entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) nav.classList.add("sticky");
   else nav.classList.remove("sticky");
+};
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
 };
 
 //Modal Window
@@ -100,3 +108,14 @@ const landingPageObserver = new IntersectionObserver(stickyNav, {
   rootMargin: `-${navHeight}px`,
 });
 landingPageObserver.observe(landing);
+
+//Revealing Sections
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
