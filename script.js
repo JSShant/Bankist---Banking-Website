@@ -10,6 +10,7 @@ const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab--container");
 const tabsContent = document.querySelectorAll(".operations__content");
 const nav = document.querySelector(".nav");
+const landing = document.querySelector(".landing");
 
 //Functions
 const openModal = function (e) {
@@ -32,6 +33,12 @@ const navOver = function (e, opacity) {
     });
     logo.style.opacity = opacity;
   }
+};
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
 };
 
 //Modal Window
@@ -84,3 +91,12 @@ tabsContainer.addEventListener("click", function (e) {
 //Transition opacity effects on navbar
 nav.addEventListener("mouseover", (e) => navOver(e, 0.5));
 nav.addEventListener("mouseout", (e) => navOver(e, 1));
+
+//Sticky nav using IntersectionObserver
+const navHeight = nav.getBoundingClientRect().height; //Added for different viewports
+const landingPageObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+landingPageObserver.observe(landing);
