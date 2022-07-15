@@ -602,3 +602,8 @@ body {
   opacity: 0;
   transform: translateY(8rem);
 }
+
+/* LAZY IMAGE FILTER */
+.lazy-img {
+  filter: blur(20px);
+}
