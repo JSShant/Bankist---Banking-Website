@@ -75,7 +75,7 @@ scrollBtn.addEventListener("click", function (e) {
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault();
-  if (e.target.classList.contains("nav__link")) {
+  if (e.target.classList.contains("nav__link" && !"btn__show--modal")) {
     const id = e.target.getAttribute("href");
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
