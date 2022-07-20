@@ -149,12 +149,15 @@ const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
 let curSlide = 0;
 const maxSlide = slides.length;
+
 const gotoSlide = function (slide) {
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
   );
 };
+
 gotoSlide(0);
+
 const nextSlide = function () {
   if (curSlide === maxSlide - 1) {
     curSlide = 0;
@@ -174,3 +177,7 @@ const prevSlide = function () {
 };
 btnRight.addEventListener("click", nextSlide);
 btnLeft.addEventListener("click", prevSlide);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowLeft") prevSlide();
+  if (e.key === "ArrowRight") nextSlide();
+});

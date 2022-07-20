@@ -367,7 +367,7 @@ body {
   height: 50rem;
   margin: 0 auto;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .slide {
