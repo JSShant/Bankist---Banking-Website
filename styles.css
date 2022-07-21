@@ -214,6 +214,8 @@ body {
 
 .features__img {
   width: 100%;
+  align-self: center;
+  justify-self: center
 }
 
 .features__feature {
@@ -607,4 +609,63 @@ body {
 /* LAZY IMAGE FILTER */
 .lazy-img {
   filter: blur(20px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 870px) {
+
+  .nav__link--btn:link,
+  .nav__link--btn:visited {
+    display: none;
+  }
+
+  .features {
+    margin: 0
+  }
+
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 610px) {
+  .header__img--wrapper {
+    display: none;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .testimonial__text {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .footer__item {
+    margin-right: 3rem;
+  }
+
+  .footer__link {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__item {
+    margin-left: 2rem;
+  }
+
+  .features__img {
+    display: none;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .operations__tab {
+    margin-right: 0.5rem;
+  }
 }
